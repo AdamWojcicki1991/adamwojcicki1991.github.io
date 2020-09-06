@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  const apiRoot = 'https://limitless-sea-78084.herokuapp.com/v1/task/';
-  const trelloApiRoot = 'https://limitless-sea-78084.herokuapp.com/v1/trello/';
+  const apiRoot = 'https://obscure-tundra-31527.herokuapp.com/v1/task/';
+  const trelloApiRoot = 'https://obscure-tundra-31527.herokuapp.com/v1/trello/';
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
 
@@ -111,14 +111,14 @@ $(document).ready(function() {
     var requestUrl = apiRoot + 'deleteTask';
 
     $.ajax({
-      url: requestUrl + '/?' + $.param({
+      url: requestUrl + '?' + $.param({
         taskId: taskId
       }),
       method: 'DELETE',
       success: function() {
         parentEl.slideUp(400, function() { parentEl.remove(); });
       }
-    })
+    });
   }
 
   function handleTaskSubmitRequest(event) {
